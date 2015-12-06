@@ -1,33 +1,34 @@
-# mount-routes
+# mount-koa-routes
 
-mount-routes = auto mount express routes with routes_folder_path
+mount-koa-routes = auto mount koajs routes with routes_folder_path
 
 [![gitter][gitter-image]][gitter-url]
 [![NPM version][npm-image]][npm-url]
 
 ## Install
 
-    npm install --save mount-routes
+    npm install --save mount-koa-routes
 
 ## Usages
 
-
 ```
-var express = require('express')
-var app = express()
+var app = require('koa')();
 
-var mount = require('mount-routes');
+var mount = require('mount-koa-routes');
 
 // simple
-// mount(app);
+mount(app);
 // with path
 // mount(app, __dirname + '/routes2');
 
 // with path & api dump
-mount(app,  __dirname + '/routes2', true);
+// mount(app,  __dirname + '/routes', true);
 
-// start server
-app.listen(23018)
+app.on('error', function(err, ctx){
+  log.error('server error', err, ctx);
+});
+
+app.listen(3000);
 ```
 
 ## Contributing
