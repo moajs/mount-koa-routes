@@ -1,6 +1,6 @@
 # mount-koa-routes
 
-mount-koa-routes = auto mount koajs routes with routes_folder_path
+mount-koa-routes = auto mount koajs routes（base on koa-router） with routes_folder_path
 
 [![gitter][gitter-image]][gitter-url]
 [![NPM version][npm-image]][npm-url]
@@ -59,7 +59,7 @@ this repo is released under the [MIT
 License](http://www.opensource.org/licenses/MIT).
 
 
-[npm-image]: https://img.shields.io/npm/v/mount-routes.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/mount-routes
+[npm-image]: https://img.shields.io/npm/v/mount-koa-routes.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/mount-koa-routes
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg
-[gitter-url]: https://gitter.im/i5ting/mount-routes?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+[gitter-url]: https://gitter.im/i5ting/mount-koa-routes?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge

@@ -1,6 +1,6 @@
 {
   "name": "mount-koa-routes",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "mount-koa-routes = auto mount koajs routes with routes_folder_path",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,7 @@
     "directory"
   ],
   "author": "moajs",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/moajs/mount-koa-routes/issues"
   },
@@ -32,7 +32,6 @@
     "require-directory": "^2.1.1"
   },
   "devDependencies": {
-    "koa": "^1.1.2",
-    "koa-router": "^5.3.0"
+    "koa": "^1.1.2"
   }
 }
