@@ -3,12 +3,12 @@ var app = require('koa')();
 var mount = require('./');
 
 // simple
-mount(app);
+// mount(app);
 // with path
-// mount(app, __dirname + '/routes2');
+mount(app, __dirname + '/routes2');
 
 // with path & api dump
-// mount(app,  __dirname + '/routes', true);
+mount(app,  __dirname + '/routes', true);
 
 app.on('error', function(err, ctx){
   log.error('server error', err, ctx);

@@ -31,6 +31,39 @@ app.on('error', function(err, ctx){
 app.listen(3000);
 ```
 
+## Routes
+
+```
+var router = require('koa-router')();
+
+router.get('/', function *(next) {
+  this.body = 'this /1!';
+});
+
+
+router.get('2', function *(next) {
+  this.body = 'this /2!';
+});
+
+module.exports = router;
+```
+
+一定要区分
+
+```
+url = /2
+router.get('2', function *(next) {
+  this.body = 'this /2!';
+});
+```
+
+```
+url = //2
+router.get('/2', function *(next) {
+  this.body = 'this /2!';
+});
+```
+
 ## Contributing
 
 1. Fork it
