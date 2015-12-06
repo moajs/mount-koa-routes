@@ -8,7 +8,7 @@ var mount = require('./');
 // mount(app, __dirname + '/routes2');
 
 // with path & api dump
-mount(app,  __dirname + '/routes', true);
+mount(app,  __dirname + '/routes2', true);
 
 app.on('error', function(err, ctx){
   log.error('server error', err, ctx);
