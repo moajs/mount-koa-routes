@@ -12,14 +12,15 @@ mount-koa-routes = auto mount koajs v2.x routes（base on koa-router） with rou
 ## Usages
 
 ```
-var app = require('koa')();
+const Koa = require('koa');
+const app = new Koa();
 
-var mount = require('mount-koa-routes');
+const mount = require('./');
 
 // simple
-mount(app);
+// mount(app);
 // with path
-// mount(app, __dirname + '/routes2');
+mount(app, __dirname + '/routes2', true);
 
 // with path & api dump
 // mount(app,  __dirname + '/routes', true);
