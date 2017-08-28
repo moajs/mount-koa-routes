@@ -1,7 +1,7 @@
 var router = require('koa-router')();
 
-router.get('/', function *(next) {
-  this.body = 'this a /api response!';
+router.get('/', function (ctx, next) {
+  ctx.body = 'this a /api response!';
 });
 
 module.exports = router;

@@ -1,25 +1,26 @@
 # mount-koa-routes
 
-mount-koa-routes = auto mount koajs routes（base on koa-router） with routes_folder_path
+mount-koa-routes = auto mount koajs v2.x routes（base on koa-router） with routes_folder_path
 
 [![gitter][gitter-image]][gitter-url]
 [![NPM version][npm-image]][npm-url]
 
 ## Install
 
-    npm install --save mount-koa-routes
+    npm install --save mount-koa-routes@next
 
 ## Usages
 
 ```
-var app = require('koa')();
+const Koa = require('koa');
+const app = new Koa();
 
-var mount = require('mount-koa-routes');
+const mount = require('./');
 
 // simple
-mount(app);
+// mount(app);
 // with path
-// mount(app, __dirname + '/routes2');
+mount(app, __dirname + '/routes2', true);
 
 // with path & api dump
 // mount(app,  __dirname + '/routes', true);
@@ -36,13 +37,13 @@ app.listen(3000);
 ```
 var router = require('koa-router')();
 
-router.get('/', function *(next) {
-  this.body = 'this /1!';
+router.get('/', function (ctx, next) {
+  ctx.body = 'this /1!';
 });
 
 
-router.get('2', function *(next) {
-  this.body = 'this /2!';
+router.get('2', function (ctx, next) {
+  ctx.body = 'this /2!';
 });
 
 module.exports = router;
@@ -52,15 +53,15 @@ module.exports = router;
 
 ```
 url = /2
-router.get('2', function *(next) {
-  this.body = 'this /2!';
+router.get('2', function (ctx, next) {
+  ctx.body = 'this /2!';
 });
 ```
 
 ```
 url = //2
-router.get('/2', function *(next) {
-  this.body = 'this /2!';
+router.get('/2', function (ctx, next) {
+  ctx.body = 'this /2!';
 });
 ```
 
@@ -75,6 +76,7 @@ router.get('/2', function *(next) {
 
 ## 版本历史
 
+- v2.0.0 init for koa v2.x
 - v1.0.3 add api dump feature
 - v1.0.2 rename index to /
 - v1.0.0 初始化版本
