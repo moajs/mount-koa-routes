@@ -6,7 +6,8 @@ const mount = require('./');
 // simple
 // mount(app);
 // with path
-mount(app, __dirname + '/routes2', true);
+mount(app, __dirname + '/routes', true, '/bbb');
+// mount(app, __dirname + '/routes2', true, '/aaa');
 
 // with path & api dump
 // mount(app,  __dirname + '/routes', true);

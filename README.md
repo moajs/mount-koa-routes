@@ -32,6 +32,13 @@ app.on('error', function(err, ctx){
 app.listen(3000);
 ```
 
+### mount multi-dir with prefix
+
+```
+mount(app, __dirname + '/routes', true, '/bbb');
+mount(app, __dirname + '/routes2', true, '/aaa');
+```
+
 ## Routes
 
 ```

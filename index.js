@@ -3,6 +3,7 @@ var requireDirectory = require('require-directory');
 var routes = requireDirectory(module, './routes');
 
 var koa = require('koa-router')(); 
+var router_pre = ''
 
 var stack = [];
 /**
@@ -56,9 +57,9 @@ function _use(app, file, path, handler) {
   // console.log(handler.stack)
   // app.use(path, handler);
   
-  koa.use(path, handler.routes());//, handler.allowedMethods());
+  koa.use(router_pre + path, handler.routes());//, handler.allowedMethods());
   
-  _track_routes(file, path, handler.routes());
+  _track_routes(file, (router_pre + path).replace("//", "/"), handler.routes());
 }
 
 function _track_routes(file, path, handle) {
@@ -141,6 +142,9 @@ function mount_with_folder(app, routes_folder_path) {
   
   var r         = arguments[1] || './routes';
   var is_debug  = arguments[2] || false;
+  var pre       = arguments[3] || '';
+
+  router_pre = pre
   
   // console.log('mount routes_folder_path = ' + r)
   routes = requireDirectory(module, r);
