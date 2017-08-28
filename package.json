@@ -1,6 +1,6 @@
 {
   "name": "mount-koa-routes",
-  "version": "2.0.1",
+  "version": "2.0.3",
   "description": "mount-koa-routes = auto mount koajs routes with routes_folder_path",
   "main": "index.js",
   "scripts": {
