@@ -5,7 +5,7 @@ router.get('/', function (ctx, next) {
 });
 
 
-router.get('2', function (ctx, next) {
+router.get('/2', function (ctx, next) {
   ctx.body = 'this /2!';
 });
 

@@ -56,10 +56,9 @@ function _use(app, file, path, handler) {
   // console.dir(handler.routes())
   // console.log(handler.stack)
   // app.use(path, handler);
-  
-  koa.use(router_pre + path, handler.routes());//, handler.allowedMethods());
-  
-  _track_routes(file, (router_pre + path).replace("//", "/"), handler.routes());
+  var fullPath = (router_pre + path).replace(/\/$/, '');
+  koa.use(fullPath, handler.routes());//, handler.allowedMethods());
+  _track_routes(file, fullPath.replace("//", "/"), handler.routes());
 }
 
 function _track_routes(file, path, handle) {
@@ -152,7 +151,7 @@ function mount_with_folder(app, routes_folder_path) {
   mount(koa) ;
   // console.log(koa.routes());
   app.use(koa.routes());
-  
+  app.use(koa.allowedMethods())
   if(is_debug){
     _dump (routes_folder_path);
   }
